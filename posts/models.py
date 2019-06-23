@@ -6,4 +6,8 @@ class Post(models.Model):
     image = models.ImageField(upload_to = 'media/')
     body = models.TextField()
 
-# Create your models here.
+    def __str__(self):
+        return self.title
+    
+    def summary(self):
+        return self.body[:100]
